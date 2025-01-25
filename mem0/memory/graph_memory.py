@@ -1,5 +1,5 @@
 import logging
-
+from datetime import datetime
 from mem0.memory.utils import format_entities
 
 try:
@@ -57,13 +57,15 @@ class MemoryGraph:
         entity_type_map = self._retrieve_nodes_from_data(data, filters)
         to_be_added = self._establish_nodes_relations_from_data(data, filters, entity_type_map)
         search_output = self._search_graph_db(node_list=list(entity_type_map.keys()), filters=filters)
+        logger.info(f"Search completed. Found {len(search_output)} results")
+        logger.debug(f"Entity type map: {entity_type_map}")
         to_be_deleted = self._get_delete_entities_from_search_output(search_output, data, filters)
 
         # TODO: Batch queries with APOC plugin
         # TODO: Add more filter support
         deleted_entities = self._delete_entities(to_be_deleted, filters["user_id"])
         added_entities = self._add_entities(to_be_added, filters["user_id"], entity_type_map)
-
+        
         return {"deleted_entities": deleted_entities, "added_entities": added_entities}
 
     def search(self, query, filters, limit=100):
@@ -181,7 +183,7 @@ class MemoryGraph:
                     "role": "system",
                     "content": EXTRACT_RELATIONS_PROMPT.replace("USER_ID", filters["user_id"]).replace(
                         "CUSTOM_PROMPT", f"4. {self.config.graph_store.custom_prompt}"
-                    ),
+                    ).replace("CURRENT_TIME",datetime.now().strftime("%Y_%m_%d__%H_%M_%S_Z")),
                 },
                 {"role": "user", "content": data},
             ]

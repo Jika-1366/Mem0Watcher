@@ -1,0 +1,65 @@
+2025-01-25 15:49:01,958 [httpx] [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-25 15:49:06,155 [httpx] [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-25 15:49:06,873 [httpx] [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-01-25 15:49:07,940 [httpx] [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-01-25 15:49:08,762 [httpx] [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-01-25 15:49:08,972 [mem0.memory.graph_memory] [INFO] Search completed. Found 0 results
+2025-01-25 15:49:10,384 [httpx] [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-25 15:49:11,416 [httpx] [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-01-25 15:49:11,903 [httpx] [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-01-25 15:49:13,087 [httpx] [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-01-25 15:49:13,600 [httpx] [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-01-25 15:49:14,816 [httpx] [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-01-25 15:49:15,056 [httpx] [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-01-25 15:49:15,797 [__main__] [INFO] Add Result: {
+  "deleted_entities": [
+    [],
+    []
+  ],
+  "added_entities": [
+    [
+      {
+        "source": "toy_nadeshiko",
+        "relationship": "is_a",
+        "target": "privately_run_website"
+      }
+    ],
+    [
+      {
+        "source": "toy_nadeshiko",
+        "relationship": "collects_information_on",
+        "target": "economic_news"
+      }
+    ],
+    [
+      {
+        "source": "toy_nadeshiko",
+        "relationship": "has_headline_as_of_2025_01_25",
+        "target": "next_generation_battery_development_competition_intensifies"
+      }
+    ]
+  ]
+}
+2025-01-25 15:49:16,011 [mem0.memory.graph_memory] [INFO] Retrieved 3 relationships
+2025-01-25 15:49:16,027 [__main__] [INFO] Get All Result: {
+  "results": [],
+  "relations": [
+    {
+      "source": "toy_nadeshiko",
+      "relationship": "collects_information_on",
+      "target": "economic_news"
+    },
+    {
+      "source": "toy_nadeshiko",
+      "relationship": "is_a",
+      "target": "privately_run_website"
+    },
+    {
+      "source": "toy_nadeshiko",
+      "relationship": "has_headline_as_of_2025_01_25",
+      "target": "next_generation_battery_development_competition_intensifies"
+    }
+  ]
+}
+2025-01-25 15:49:16,027 [mem0.memory.main] [INFO] Deleted 0 memories
+2025-01-25 15:49:16,249 [__main__] [INFO] Deleted all memories for user 'alice'
